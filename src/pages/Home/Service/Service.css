@@ -1,6 +1,14 @@
 .single-service img{
-    width: 100px;
+    width: 90px;
+    height: 100px;
+   margin: 0 auto;
+   margin-top: 15px;
 }
-.single-service{
-    width: 350px;
-}echo "# vital-photography-client" >> README.md
+.single-total{
+    background-color: #0f2041;
+}
+
+.single-service:hover{
+    background-color: #0f2041;
+    color: white;
+}

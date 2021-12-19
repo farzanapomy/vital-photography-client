@@ -1,5 +1,9 @@
-.all-services{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-gap: 5px;
+
+.service-title p{
+    color: gray;
+}
+.service-title h1{
+    font-weight: 700;
+    font-size: 50px;
+    margin: 20px 0px;
 }
