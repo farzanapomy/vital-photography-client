@@ -1,14 +1,14 @@
 import React from 'react';
-import {Card, CardGroup, Button } from 'react-bootstrap'
+import { Card, CardGroup } from 'react-bootstrap'
 import './Service.css'
 const Service = ({ service }) => {
     const { name, img, description, charge } = service;
     return (
 
-        <div className='single-total'>
+        <div className='single-total '>
 
-            <CardGroup >
-                <Card className='single-service'>
+            <CardGroup className='total-service'>
+                <Card className='single-service '>
                     <Card.Img variant="top" src={img} />
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>
@@ -16,11 +16,11 @@ const Service = ({ service }) => {
                             {description}
                         </Card.Text>
                         <Card.Text>
-                            $ {charge}
+                          Charge: ${charge}
                         </Card.Text>
                     </Card.Body>
 
-                    <Button>Order now</Button>
+                    <button className='service-btn border-0'>Order now</button>
 
                 </Card>
 

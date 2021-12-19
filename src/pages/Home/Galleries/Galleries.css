@@ -1,0 +1,16 @@
+.gallery-container img:hover{
+    transform: scale(.9);
+    transition: ease-in-out;
+}
+.gallery-container img{
+    border-radius: 10px;
+}
+.gallery-container h1{
+    color: white;
+    font-weight: 700;
+    font-size: 50px;
+    margin: 30px 0px;
+}
+.gallery-container p{
+    color: gray;
+}

@@ -1,0 +1,19 @@
+.work-img img {
+    width: 300px;
+    height: 80px;
+    border-radius: 20px;
+}
+.work-img img:hover{
+    transform: scale(.9);
+    transition: ease-in-out;
+}
+
+.works-div h1{
+    color: white;
+    font-weight: 700;
+    font-size: 50px;
+    margin: 70px 0px;
+}
+.works-div{
+    margin: 100px 0px;
+}

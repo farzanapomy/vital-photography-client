@@ -4,8 +4,11 @@
    margin: 0 auto;
    margin-top: 15px;
 }
-.single-total{
-    background-color: #0f2041;
+
+.service-btn{
+    background-image:linear-gradient(#a1adc59c,#FF9900);
+    padding: 10px 0px;
+
 }
 
 .single-service:hover{

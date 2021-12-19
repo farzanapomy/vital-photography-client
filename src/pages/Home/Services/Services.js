@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Service from '../Service/Service';
 import { Row } from 'react-bootstrap'
+import ScrollAnimation from 'react-animate-on-scroll';
+
 import './Services.css'
 
 const Services = () => {
@@ -15,8 +17,17 @@ const Services = () => {
         <div className='container my-5 '>
 
             <div className='my-5 service-title'>
+
                 <h1>Our Services</h1>
-                <p >Professional Photography Services. If you need photographs for your company website or a new printed sales brochure, our professional photographers will..</p>
+
+
+
+                <ScrollAnimation animateIn='fadeIn'
+                    animateOut='fadeOut'>
+                    <p >Professional Photography Services. If you need photographs for your company website or a new printed sales brochure, our professional photographers will..</p>
+                </ScrollAnimation>
+
+
 
             </div>
 
