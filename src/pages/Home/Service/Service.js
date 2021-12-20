@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Card, CardGroup } from 'react-bootstrap'
 import './Service.css'
+import AOS from 'aos';
+import 'aos/dist/aos.css'
 const Service = ({ service }) => {
     const { name, img, description, charge } = service;
+
+    useEffect(() => {
+        AOS.init()
+    }, [])
     return (
 
-        <div className='single-total '>
+        <div className='single-total ' data-aos='flip-left'>
 
             <CardGroup className='total-service'>
                 <Card className='single-service '>
@@ -16,7 +22,7 @@ const Service = ({ service }) => {
                             {description}
                         </Card.Text>
                         <Card.Text>
-                          Charge: ${charge}
+                            Charge: ${charge}
                         </Card.Text>
                     </Card.Body>
 

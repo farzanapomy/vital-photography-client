@@ -13,13 +13,22 @@ const Services = () => {
             .then(data => setServices(data))
     }, [])
 
+   
+
     return (
         <div className='container my-5 '>
 
             <div className='my-5 service-title'>
 
-                <h1>Our Services</h1>
 
+                <ScrollAnimation animateIn='bounceInRight'
+                    animateOut='bounceOutLeft'>
+                    <h2>
+                        <a href='https://daneden.github.io/animate.css/'>
+                            <h1>Our Services</h1>
+                        </a>
+                    </h2>
+                </ScrollAnimation>
 
 
                 <ScrollAnimation animateIn='fadeIn'
@@ -31,7 +40,7 @@ const Services = () => {
 
             </div>
 
-            <Row xs={12} md={3} className="g-4 ">
+            <Row xs={12} md={3} className="g-4 " >
 
                 {
                     services.map(service => <Service
