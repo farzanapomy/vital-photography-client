@@ -8,21 +8,15 @@ const Login = () => {
 
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className='login-form '>
-            <input
-                {...register("email")}
-            />
-
-            <input
-                {...register("password",
-                    { pattern: /^[A-Za-z]+$/i })}
-            />
-            <input
-                {...register("password",
-                    { pattern: /^[A-Za-z]+$/i })}
-            />
-            <input className='submit border-0' type="submit" />
-        </form>
+        <div>
+            <h2>Please Login</h2>
+            <form onSubmit={handleSubmit(onSubmit)} className='login-form'>
+                <input {...register("email")} />
+                <input {...register("password")} />
+               
+                <input type="submit" />
+            </form>
+        </div>
     );
 };
 

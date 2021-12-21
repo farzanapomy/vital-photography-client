@@ -6,7 +6,7 @@ import Works from '../Works/Works';
 
 const Home = () => {
     return (
-        <div>
+        <div id='home'>
             <Banner></Banner>
             <Galleries></Galleries>
             <Services></Services>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import './Register.css'
 
 const Register = () => {
     const { register, handleSubmit } = useForm();
@@ -7,11 +8,32 @@ const Register = () => {
 
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className='login-form '>
-            <input {...register("firstName", { required: true, maxLength: 20 })} />
-            <input {...register("email", { pattern: /^[A-Za-z]+$/i })} />
-            <input className='submit border-0' type="submit" />
-        </form>
+        <div>
+            <form onSubmit={handleSubmit(onSubmit)} className='register-form'>
+                <input
+                    placeholder='Enter you name'
+                    type='text'
+                    name='text'
+                    {...register("name")}
+
+                />
+
+                <input
+                    type='email'
+                    name='email'
+                    placeholder='Enter your email'
+                    {...register("email")}
+                />
+
+                <input
+                    placeholder='Enter your password'
+                    name='password'
+                    type="password"
+                    {...register("password")}
+                />
+                <input type="submit" />
+            </form>
+        </div>
     );
 };
 
