@@ -2,16 +2,15 @@ import React from 'react';
 import img1 from '../../../images/image (1).jpg'
 import img2 from '../../../images/image (2).jpg'
 import img3 from '../../../images/image (3).jpg'
-import img4 from '../../../images/image (4).jpg'
 import img5 from '../../../images/image (5).jpg'
 import img6 from '../../../images/image (6).jpg'
 import img7 from '../../../images/image (7).jpg'
-import img8 from '../../../images/image (8).jpg'
-import img9 from '../../../images/image (9).jpg'
 import img10 from '../../../images/image (10).jpg'
 import img11 from '../../../images/image (11).jpg'
 import img12 from '../../../images/image (12).jpg'
 import img13 from '../../../images/image (13).jpg'
+import img14 from '../../../images/download.jpg'
+
 import bg from '../../../images/bg.jpg'
 
 import './Galleries.css'
@@ -47,9 +46,7 @@ const Galleries = () => {
                             </div>
                             <div className="col-lg-4">
                                 <img className='img-fluid my-3' src={img5} alt="" />
-                                <img className='w-75' src={img4} alt="" />
-                                <img className='w-75 my-3' src={img7} alt="" />
-                                <img className='img-fluid' src={img8} alt="" />
+                                <img className='w-75' src={img14} alt="" />
                                 <img className='img-fluid my-2' src={img12} alt="" />
 
                             </div>
@@ -59,7 +56,7 @@ const Galleries = () => {
                     <div className="col-lg-4">
 
                         <img className='img-fluid mb-3' src={img10} alt="" />
-                        <img className='img-fluid' src={img9} alt="" />
+                        <img className='img-fluid' src={img7} alt="" />
                     </div>
                 </div>
             </div>

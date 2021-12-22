@@ -4,7 +4,7 @@ import './Service.css'
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 const Service = ({ service }) => {
-    const { name, img, description, charge } = service;
+    const { name, img, description } = service;
 
     useEffect(() => {
         AOS.init()
@@ -21,9 +21,7 @@ const Service = ({ service }) => {
                         <Card.Text>
                             {description}
                         </Card.Text>
-                        <Card.Text>
-                            Charge: ${charge}
-                        </Card.Text>
+                        
                     </Card.Body>
 
                     <button className='service-btn border-0'>Order now</button>
