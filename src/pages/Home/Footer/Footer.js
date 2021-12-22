@@ -32,8 +32,8 @@ const Footer = () => {
                         </p>
 
 
-                        <p><i class="far fa-envelope"></i> {" "} photographer@gmail.com</p>
-                        <p><i class="fas fa-phone-square-alt"></i> {" "} +0011221802</p>
+                        <p><i className="far fa-envelope"></i> {" "} photographer@gmail.com</p>
+                        <p><i className="fas fa-phone-square-alt"></i> {" "} +0011221802</p>
                         <div className='footer-input'>
                             <input type="search" name="" id="" /> <br />
                             <button>Subscribe</button>
@@ -44,9 +44,9 @@ const Footer = () => {
                         <p>
                             help you build a website from scratch, automatically. Watch the video below to learn how easy website building can be and start setting up your own photography site today
                         </p>
-                        <i class="fas fa-map-marker-alt"></i>
-                        <i class="fab fa-twitter"></i>
-                        <i class="fab fa-facebook"></i>
+                        <i className="fas fa-map-marker-alt"></i>
+                        <i className="fab fa-twitter"></i>
+                        <i className="fab fa-facebook"></i>
                     </Col>
                     <Col sm className='feature-img' >
                         <Row className="" sm={4} >
@@ -72,7 +72,7 @@ const Footer = () => {
 
             </Container>
             <div className='copyright'>
-                <p><i class="fas fa-copyright"></i> Copyright by Farzana Pomy 2022</p>
+                <p><i className="fas fa-copyright"></i> Copyright by Farzana Pomy 2022</p>
 
             </div>
         </div>
