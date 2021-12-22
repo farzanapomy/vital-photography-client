@@ -3,6 +3,7 @@ import { Card, CardGroup } from 'react-bootstrap'
 import './Service.css'
 import AOS from 'aos';
 import 'aos/dist/aos.css'
+import { Link } from 'react-router-dom';
 const Service = ({ service }) => {
     const { name, img, description } = service;
 
@@ -21,13 +22,12 @@ const Service = ({ service }) => {
                         <Card.Text>
                             {description}
                         </Card.Text>
-                        
                     </Card.Body>
 
-                    <button className='service-btn border-0'>Order now</button>
-
+                    <Link to={`/services/${service._id}`}>
+                        <button className='service-btn border-0'>Order now</button>
+                    </Link>
                 </Card>
-
             </CardGroup>
 
 
