@@ -4,7 +4,9 @@
    margin: 0 auto;
    margin-top: 15px;
 }
-
+.single-service{
+    color: black;
+}
 .service-btn{
     background-image:linear-gradient(#a1adc59c,#FF9900);
     padding: 10px 0px;

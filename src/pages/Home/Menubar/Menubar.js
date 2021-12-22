@@ -8,9 +8,9 @@ const Menubar = () => {
     return (
 
         <>
-            <Navbar bg="dark" variant="dark">
+            <Navbar bg="dark" variant="dark" sticky="top" collapseOnSelect expand="lg" >
                 <Container>
-                    <Navbar.Brand href="/home#home">VITAL PHOTOGRAPHY</Navbar.Brand>
+                    <Navbar.Brand as={Link} to="/home#home">VITAL PHOTOGRAPHY</Navbar.Brand>
                     <Nav className="ms-auto">
                         <Nav.Link href="#home">Home</Nav.Link>
                         {
@@ -22,13 +22,13 @@ const Menubar = () => {
                             user?.email &&
                             <Nav.Link as={Link} to="/login" className='text-white'>
                                 Hello  {user?.displayName}
-
                             </Nav.Link>
                         }
 
                     </Nav>
                 </Container>
             </Navbar>
+
 
         </>
 

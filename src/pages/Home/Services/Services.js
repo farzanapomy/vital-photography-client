@@ -33,7 +33,7 @@ const Services = () => {
 
                 <ScrollAnimation animateIn='fadeIn'
                     animateOut='fadeOut'>
-                    <p >Professional Photography Services. If you need photographs for your company website or a new printed sales brochure, our professional photographers will..</p>
+                    <h6>Professional Photography Services. If you need photographs for your company website or a new printed sales brochure, our professional photographers will..</h6>
                 </ScrollAnimation>
 
 
