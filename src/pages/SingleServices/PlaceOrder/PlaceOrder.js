@@ -7,12 +7,12 @@ import './PlaceOrder.css'
 const PlaceOrder = () => {
     const { ID } = useParams()
     const { user } = useFirebase()
-    console.log(ID);
+
     const [singleService, setSingleService] = useState([])
     const { register, handleSubmit, reset } = useForm();
 
     useEffect(() => {
-        const url = `http://localhost:5000/services/${ID}`
+        const url = `https://whispering-crag-95185.herokuapp.com/services/${ID}`
         fetch(url)
             .then(res => res.json())
             .then(data => setSingleService(data))
@@ -38,16 +38,16 @@ const PlaceOrder = () => {
                                 <input
                                     {...register("text", { required: true })}
                                     placeholder='Enter product name'
-                                    defaultValue={singleService?.name}
+                                    defaultValue={singleService.name}
                                 />
                                 <input
                                     {...register("name", { required: true })}
-                                    placeholder='Enter Name'
+                                    placeholder='Enter Your Name'
                                     defaultValue={user.displayName}
                                 />
                                 <input
                                     {...register("email", { required: true })}
-                                    placeholder='Enter email'
+                                    placeholder='Enter your email'
                                     defaultValue={user.email}
                                 />
 
