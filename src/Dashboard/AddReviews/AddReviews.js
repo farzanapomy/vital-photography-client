@@ -1,31 +1,29 @@
 import axios from 'axios';
 import React from 'react';
+
 import { useForm } from 'react-hook-form';
-import './AddServices.css'
+import './AddReviews.css';
 
-const AddServices = () => {
-    const { register, handleSubmit ,reset} = useForm();
+const AddReviews = () => {
+    const { register, handleSubmit, reset } = useForm();
 
-    const onSubmit = data => {
-        axios.post('https://whispering-crag-95185.herokuapp.com/services', data)
+    const onSubmit = (data) => {
+        axios.post('http://localhost:5000/AddReviews', data)
             .then(res => {
-
                 if (res.data.insertedId) {
-                    alert('Your Data Successfully added')
+                    alert("Your review added on home page.");
                     return;
                 }
-                console.log(res)
+                console.log(res);
             })
-            reset()
-        console.log(data)
+
+        console.log(data);
     }
-
-
 
     return (
         <>
             <div className='w-50 mx-auto'>
-                <h2>Add a Service here</h2>
+                <h2>Give your review here</h2>
 
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <input
@@ -47,9 +45,13 @@ const AddServices = () => {
                         className='p-2 w-100 input-field'
                     />
 
-                    <input
-                        {...register("number", { required: true })}
-                        placeholder='enter price'
+
+                    <input type="number"
+                        required
+                        placeholder='Enter rating'
+                        {...register("ratting",)}
+                        min="1"
+                        max="5"
                         className='p-2 w-100 input-field'
                     />
 
@@ -60,4 +62,4 @@ const AddServices = () => {
     );
 };
 
-export default AddServices;
+export default AddReviews;

@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Reviews = () => {
+const Dashboard = () => {
+    // let match = useRouteMatch
     return (
         <div>
             
@@ -8,4 +9,4 @@ const Reviews = () => {
     );
 };
 
-export default Reviews;
+export default Dashboard;
