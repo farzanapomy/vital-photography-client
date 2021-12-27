@@ -1,13 +1,17 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
-import useFirebase from '../../../hooks/useFirebase';
+import useAuth from '../../../hooks/useAuth';
 import './Login.css'
 
 const Login = () => {
-    const { signInWithGoogle } = useFirebase()
+    const { signInWithGoogle, logInUser } = useAuth()
     const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+
+    const onSubmit = data => {
+        logInUser(data.email, data.password)
+        console.log(data)
+    };
 
     return (
         <div>

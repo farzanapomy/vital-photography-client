@@ -1,10 +1,18 @@
 import React from 'react';
+import { Alert } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
+import useAuth from '../../../hooks/useAuth'
 import './Register.css'
 
 const Register = () => {
     const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    const { registerUser ,error} = useAuth()
+    const onSubmit = data => {
+        registerUser(data.email, data.password, data.name)
+
+
+        console.log(data)
+    };
 
 
     return (
@@ -15,6 +23,7 @@ const Register = () => {
                     type='text'
                     name='text'
                     {...register("name")}
+                    className='border-0 '
 
                 />
 
@@ -33,6 +42,14 @@ const Register = () => {
                 />
                 <input type="submit" />
             </form>
+            <Alert variant="success">
+                <Alert.Heading>Hey, nice to see you</Alert.Heading>
+                <p>
+                    {error}
+                </p>
+               
+            </Alert>
+
         </div>
     );
 };

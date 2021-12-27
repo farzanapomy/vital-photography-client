@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
@@ -19,6 +20,12 @@ const PlaceOrder = () => {
     }, [])
 
     const onSubmit = data => {
+        // axios.post('http://localhost:5000/allOrders',data)
+        // .then(res=>{
+        //     console.log(res);
+        // })
+
+
         console.log(data);
     }
 
