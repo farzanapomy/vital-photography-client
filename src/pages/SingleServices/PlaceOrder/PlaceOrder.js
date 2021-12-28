@@ -20,10 +20,13 @@ const PlaceOrder = () => {
     }, [])
 
     const onSubmit = data => {
-        // axios.post('http://localhost:5000/allOrders',data)
-        // .then(res=>{
-        //     console.log(res);
-        // })
+        axios.post('http://localhost:5000/allOrders', data)
+            .then(res => {
+                if(res.data.insertedId){
+                    alert('Your Orders successfully added');
+                }
+                console.log(res);
+            })
 
 
         console.log(data);

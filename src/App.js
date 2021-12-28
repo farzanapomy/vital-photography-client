@@ -3,6 +3,7 @@ import './App.css';
 import AuthProvider from './contexts/AuthProvider';
 import AddReviews from './Dashboard/AddReviews/AddReviews';
 import DashBoard from './Dashboard/Dashboard/Dashboard';
+import ManageOrder from './Dashboard/ManageOrder/ManageOrder';
 import MyOrders from './Dashboard/MyOrders/MyOrders';
 import AddServices from './pages/AddServices/AddServices';
 import Footer from './pages/Home/Footer/Footer';
@@ -26,20 +27,17 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/services" element={<Services />} />
-            {/* <PrivateRoute path="/services/:ID" element={<PlaceOrder />} /> */}
 
-            <Route path='/services/:ID' element={<PrivateRoute>
-              <PlaceOrder />
-            </PrivateRoute>}>
-            </Route>
-
-          
+            <Route path="/services/:ID"
+              element={<PrivateRoute><PlaceOrder />
+              </PrivateRoute>} />
 
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/addServices" element={<AddServices />} />
             <Route path="/AddReviews" element={<AddReviews />} />
             <Route path="/MyOrders" element={<MyOrders />} />
+            <Route path="/ManageOrder" element={<ManageOrder />} />
             {/* <Route path="/dashBoard" element={<DashBoard />} /> */}
 
 
