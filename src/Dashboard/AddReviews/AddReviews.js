@@ -8,7 +8,7 @@ const AddReviews = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = (data) => {
-        axios.post('http://localhost:5000/AddReviews', data)
+        axios.post('https://whispering-crag-95185.herokuapp.com/AddReviews', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert("Your review added on home page.");

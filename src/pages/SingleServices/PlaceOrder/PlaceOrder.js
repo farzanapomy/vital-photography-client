@@ -20,9 +20,9 @@ const PlaceOrder = () => {
     }, [])
 
     const onSubmit = data => {
-        axios.post('http://localhost:5000/allOrders', data)
+        axios.post('https://whispering-crag-95185.herokuapp.com/allOrders', data)
             .then(res => {
-                if(res.data.insertedId){
+                if (res.data.insertedId) {
                     alert('Your Orders successfully added');
                 }
                 console.log(res);

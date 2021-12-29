@@ -19,10 +19,10 @@ const Menubar = () => {
                     <Navbar.Collapse className="justify-content-end ">
                         <Nav className="ms-auto">
                             <Nav.Link as={Link} to="/home#home">Home</Nav.Link>
-                            {/* {
+                            {
                                 user.email &&
                                 <Nav.Link as={Link} to="/Dashboard">Dashboard</Nav.Link>
-                            } */}
+                            }
                             {!user.email &&
                                 <Nav.Link as={Link} to="/login">Login</Nav.Link>
                             }

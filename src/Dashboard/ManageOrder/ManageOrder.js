@@ -6,10 +6,35 @@ const ManageOrder = () => {
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/allOrders`)
+        fetch(`https://whispering-crag-95185.herokuapp.com/allOrders`)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
+
+    const handleDelete = (id) => {
+        const note = window.confirm('Do you want to delete this Order?');
+        if (note) {
+            const url = `https://whispering-crag-95185.herokuapp.com/allOrders/${id}`
+            fetch(url, {
+                method: "DELETE"
+            })
+                .then(res => res.json())
+                .then(data => {
+
+                    if (data.deletedCount) {
+                        alert("Order successfully deleted")
+                    }
+                    const remaining = orders.filter(order => order._id !== id);
+                    setOrders(remaining)
+                    console.log(data);
+                })
+        }
+
+    }
+
+
+
+
 
     return (
         <div className='container'>
@@ -37,11 +62,13 @@ const ManageOrder = () => {
                             <td>{order.text}</td>
                             <td>{order.name}</td>
                             <td>my Order</td>
-                            <td>Delete Order</td>
+                            <td>
+                                <button onClick={() => handleDelete(order._id)}>Delete</button>
+                            </td>
                         </tr>
-                        
+
                     </tbody>
-                    )}
+                )}
 
             </Table>
 

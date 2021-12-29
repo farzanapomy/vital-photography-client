@@ -38,7 +38,7 @@ function App() {
             <Route path="/AddReviews" element={<AddReviews />} />
             <Route path="/MyOrders" element={<MyOrders />} />
             <Route path="/ManageOrder" element={<ManageOrder />} />
-            {/* <Route path="/dashBoard" element={<DashBoard />} /> */}
+            <Route path="/dashBoard" element={<DashBoard />} />
 
 
           </Routes>
