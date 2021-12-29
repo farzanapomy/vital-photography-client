@@ -1,7 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-// import useAuth from '../../../hooks/useAuth';
-
+import './MakeAdmin.css'
 
 const MakeAdmin = () => {
     const { register, handleSubmit, reset } = useForm();
@@ -17,11 +16,11 @@ const MakeAdmin = () => {
         })
             .then(res => res.json())
             .then(data => {
-                // if (data.modifiedCount) {
-                //     alert('Admin created successfully')
-                reset();
+                if (data.modifiedCount) {
+                    alert('Admin created successfully')
+                    reset();
 
-                // }
+                }
                 console.log(data)
             })
 
@@ -38,8 +37,8 @@ const MakeAdmin = () => {
                         placeholder='Enter Email'
                         className='p-2 w-100 input-field'
                     />
-                    {/* <p>style={{ marginTop: '200px' }}</p> */}
-                    <input className='btn btn-warning my-3 px-5' type="submit" value="Make Admin" />
+
+                    <input className='admin-btn' type="submit" value="Make Admin" />
                 </form>
 
             </div>

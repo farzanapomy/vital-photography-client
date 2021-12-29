@@ -53,7 +53,7 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false))
     }
 
-    const logInUser = (email, password,navigate) => {
+    const logInUser = (email, password, navigate) => {
         setIsLoading(true)
         signInWithEmailAndPassword(auth, email, password)
             .then((result) => {
@@ -69,6 +69,15 @@ const useFirebase = () => {
     }
 
 
+    // setAdmin
+
+
+    useEffect(() => {
+        const url = `https://whispering-crag-95185.herokuapp.com/users/${user.email}`
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+    }, [user.email])
 
 
 
@@ -116,24 +125,6 @@ const useFirebase = () => {
         })
             .then()
     }
-
-
-    // setAdmin
-    useEffect(() => {
-        fetch(`https://whispering-crag-95185.herokuapp.com/users/${user.email}`)
-            .then(res => res.json())
-            .then(data => setAdmin(data.admin))
-    }, [user.email])
-
-
-
-
-
-
-
-
-
-
 
 
 

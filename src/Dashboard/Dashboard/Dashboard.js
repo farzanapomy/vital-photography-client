@@ -5,52 +5,47 @@ import useAuth from '../../hooks/useAuth';
 
 const DashBoard = () => {
     const { admin } = useAuth();
-
+    console.log(admin);
 
     return (
         <div className="container my-5">
             <div className="dashboard-container">
                 <div className="row">
                     <div className="col-md-3 ">
-                        {/* <div className="dashboard"> */}
+
                         <h5 style={{ margin: "15px", padding: "15px", textDecoration: "" }}>User Dashboard</h5>
-                        <div>
-                            <Link to={`/dashboard/addReviews`}>
-                                <li className="dashboard-menu mt-5">AddReview</li>
-                            </Link>
-                            <Link to={`/dashboard/ManageOrder`}>
-                                <li className="dashboard-menu mt-5">ManageOrder</li>
-                            </Link>
-                            <Link to={`/dashboard/MyOrders`}>
-                                <li className="dashboard-menu mt-5">MyOrders</li>
-                            </Link>
 
-                        </div>
-
-
-                        {admin &&
+                        {admin ?
 
                             <div>
-                                <Link to='/home'>
-                                    <button className="dashboard-menu mt-5 btn btn-warning px-5">Back</button>
-                                </Link>
+
                                 <Link to={`/dashboard/makeAdmin`}>
                                     <li className="dashboard-menu mt-5">MakeAdmin</li>
                                 </Link>
-                                <Link to={`/dashboard/addProduct`}>
-                                    <li className="dashboard-menu mt-5">AddProduct</li>
+                                <Link to={`/dashboard/AddServices`}>
+                                    <li className="dashboard-menu mt-5">AddServices</li>
                                 </Link>
-                                <Link to={`/dashboard/managerOrder`}>
+                                <Link to={`/dashboard/ManageOrder`}>
                                     <li className="dashboard-menu mt-5">Manage All Order</li>
                                 </Link>
-                                <Link to={`/dashboard/managerProduct`}>
-                                    <li className="dashboard-menu mt-5">Manage All Product</li>
+                            </div>
+                            :
+                            <div>
+                                <Link to={`/dashboard/addReviews`}>
+                                    <li className="dashboard-menu mt-5">AddReview</li>
                                 </Link>
+                                <Link to={`/dashboard/Payment`}>
+                                    <li className="dashboard-menu mt-5">Payment</li>
+                                </Link>
+                                <Link to={`/dashboard/MyOrders`}>
+                                    <li className="dashboard-menu mt-5">MyOrders</li>
+                                </Link>
+
                             </div>
                         }
 
 
-                        {/* </div> */}
+
 
 
 
