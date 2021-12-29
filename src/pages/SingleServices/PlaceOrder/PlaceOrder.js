@@ -27,7 +27,7 @@ const PlaceOrder = () => {
                 }
                 console.log(res);
             })
-            reset()
+        reset()
 
         console.log(data);
     }
@@ -49,6 +49,8 @@ const PlaceOrder = () => {
                                     {...register("text", { required: true })}
                                     placeholder='Enter product name'
                                     defaultValue={singleService.name}
+                                    disabled
+                                    className='text-light'
                                 />
                                 <input
                                     {...register("name", { required: true })}
@@ -59,6 +61,8 @@ const PlaceOrder = () => {
                                     {...register("email", { required: true })}
                                     placeholder='Enter your email'
                                     defaultValue={user.email}
+                                    disabled
+                                    className='text-light'
                                 />
 
                                 <input
