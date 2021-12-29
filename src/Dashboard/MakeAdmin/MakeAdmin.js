@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import useAuth from '../../../hooks/useAuth';
+// import useAuth from '../../../hooks/useAuth';
 
 
 const MakeAdmin = () => {
@@ -8,21 +8,20 @@ const MakeAdmin = () => {
 
 
     const onSubmit = (email) => {
-        const user = { email }
         fetch('https://whispering-crag-95185.herokuapp.com/users/makeAdmin', {
             method: "PUT",
             headers: {
                 "content-type": "application/json"
             },
-            body: JSON.stringify(user)
+            body: JSON.stringify(email)
         })
             .then(res => res.json())
             .then(data => {
-                if (data.modifiedCount) {
-                    alert('Admin created successfully')
+                // if (data.modifiedCount) {
+                //     alert('Admin created successfully')
+                reset();
 
-                    reset();
-                }
+                // }
                 console.log(data)
             })
 

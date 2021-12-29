@@ -17,9 +17,9 @@ const PlaceOrder = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setSingleService(data))
-    }, [])
+    }, [ID])
 
-    const onSubmit = data => {
+    const onSubmit = (data) => {
         axios.post('https://whispering-crag-95185.herokuapp.com/allOrders', data)
             .then(res => {
                 if (res.data.insertedId) {
@@ -29,7 +29,7 @@ const PlaceOrder = () => {
             })
         reset()
 
-        console.log(data);
+        console.log('data');
     }
 
 
@@ -49,8 +49,7 @@ const PlaceOrder = () => {
                                     {...register("text", { required: true })}
                                     placeholder='Enter product name'
                                     defaultValue={singleService.name}
-                                    disabled
-                                    className='text-light'
+                                   
                                 />
                                 <input
                                     {...register("name", { required: true })}
@@ -61,8 +60,7 @@ const PlaceOrder = () => {
                                     {...register("email", { required: true })}
                                     placeholder='Enter your email'
                                     defaultValue={user.email}
-                                    disabled
-                                    className='text-light'
+                                   
                                 />
 
                                 <input

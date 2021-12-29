@@ -11,7 +11,7 @@ const Login = () => {
     const { register, handleSubmit } = useForm();
     const navigate = useNavigate()
     const onSubmit = data => {
-        logInUser(data.email, data.password)
+        logInUser(data.email, data.password,navigate)
         console.log(data)
     };
 

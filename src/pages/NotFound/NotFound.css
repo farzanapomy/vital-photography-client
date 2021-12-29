@@ -1,0 +1,8 @@
+.goBack-btn{
+    padding: 5px 70px;
+    margin: 10px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    background-image: linear-gradient(#202202ad,#d4c7c78e);
+}

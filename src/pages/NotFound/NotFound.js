@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import not from '../../images/404.gif'
-
+import not from '../../images/404.png'
+import './NotFound.css'
 
 const NotFound = () => {
     return (
         <div>
-            <img className='w-50' src={not} alt="" />
+            <img className='w-25 img-fluid' src={not} alt="" />
             <br />
             <Link to='/home'>
-                <button className='btn btn-warning '>Go back</button>
+                <button className='goBack-btn'>Go back</button>
             </Link>
         </div>
     );

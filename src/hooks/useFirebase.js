@@ -53,11 +53,12 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false))
     }
 
-    const logInUser = (email, password) => {
+    const logInUser = (email, password,navigate) => {
         setIsLoading(true)
         signInWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 const user = result.user;
+                navigate('/dashboard')
                 console.log(user);
 
             })

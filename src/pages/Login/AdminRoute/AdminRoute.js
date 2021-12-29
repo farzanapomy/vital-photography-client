@@ -1,13 +1,12 @@
 import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-import loader from '../../../images/loader.gif'
 
 const AdminRoute = ({ children, ...rest }) => {
     const { user, admin, isLoading } = useAuth();
     let location = useLocation();
     if (isLoading) {
-        return <img src={loader} alt="" />
+        return 'Loading'
     }
 
 

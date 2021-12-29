@@ -1,5 +1,4 @@
 import React from 'react';
-import { Alert } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth'
@@ -45,13 +44,7 @@ const Register = () => {
                 />
                 <input type="submit" />
             </form>
-            <Alert variant="success">
-                <Alert.Heading>Hey, nice to see you</Alert.Heading>
-                <p>
-                    {error}
-                </p>
-
-            </Alert>
+            
 
         </div>
     );
