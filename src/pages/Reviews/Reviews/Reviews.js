@@ -1,54 +1,51 @@
-import React from 'react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import { useState, useEffect } from 'react';
-import { Container } from 'react-bootstrap';
+// import React from 'react';
+// import 'swiper/css/swiper.css';
+// import Swiper from 'react-id-swiper';
+// import 'swiper/css/navigation';
+// import 'swiper/css/scrollbar';
+// import { useState, useEffect } from 'react';
+// import { Container } from 'react-bootstrap';
 
-const Reviews = () => {
-    const [reviews, setReviews] = useState([])
+// const HeroSliderConfig = {
+//     containerClass: "swiper-container hero-slider",
+//     parallax: true,
+//     centeredSlider: true,
+//     speed: 500,
+//     spaceBetween: 0,
+//     effect: 'slider'
+// }
+// const Reviews = () => {
+//     const [reviews, setReviews] = useState([])
+//     const [parallaxSwiper, setParallaxSwiper] = useState(null)
+//     const parallaxAmount = parallaxSwiper ? parallaxSwiper.width * 0.95 : 8;
+//     const parallaxOpacity = 0.5
 
-    useEffect(() => {
-        fetch('https://whispering-crag-95185.herokuapp.com/AddReviews')
-            .then(res => res.json())
-            .then(data => setReviews(data));
-    }, [])
+//     useEffect(() => {
+//         fetch('https://whispering-crag-95185.herokuapp.com/AddReviews')
+//             .then(res => res.json())
+//             .then(data => console.log(data));
+//     }, [])
 
-    return (
-        <>
-            {
-                reviews.map(review => <Swiper
-                    // install Swiper modules
-                    modules={[Navigation, Pagination, Scrollbar, A11y]}
-                    spaceBetween={50}
-                    slidesPerView={3}
-                    navigation
-                    pagination={{ clickable: true }}
-                    scrollbar={{ draggable: true }}
-                    onSwiper={(swiper) => console.log(swiper)}
-                    onSlideChange={() => console.log('slide change')}
-                >
-                    <SwiperSlide>
+//     return (
+//         <Swiper {...HeroSliderConfig} getSwiper={setParallaxSwiper}>
 
-                        <Container>
-                            <h2>{review.name}</h2>
-                            <img src={review.img} alt="" />
-                        </Container></SwiperSlide>
 
-                    {/* <SwiperSlide>Slide 2</SwiperSlide>
-                    <SwiperSlide>Slide 3</SwiperSlide>
-                    <SwiperSlide>Slide 4</SwiperSlide>
-                    <SwiperSlide>Slide 4</SwiperSlide>
-                    <SwiperSlide>Slide 4</SwiperSlide> */}
-                    ...
-                </Swiper>)
-            }
+//             <div className="hero-slider">
+//                 {
+//                     reviews.map(review =>
+//                      <div className="slider-img" data-swiper-parallax={parallaxAmount} data-swiper-parallax-opacity={parallaxOpacity}>
+//                             <h2>{review.name}</h2>
+//                     </div>)
+//                 }
+//             </div>
+//             <div>Slide #1</div>
+//             <div>Slide #2</div>
+//             <div>Slide #3</div>
+//             <div>Slide #4</div>
+//             <div>Slide #5</div>
 
-        </>
-    );
-};
+//         </Swiper>
+//     );
+// };
 
-export default Reviews;
+// export default Reviews;

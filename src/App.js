@@ -36,9 +36,18 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/addServices" element={<AddServices />} />
             <Route path="/AddReviews" element={<AddReviews />} />
-            <Route path="/MyOrders" element={<MyOrders />} />
-            <Route path="/ManageOrder" element={<ManageOrder />} />
-            <Route path="/dashBoard" element={<DashBoard />} />
+
+
+            <Route path='/dashboard' element={<PrivateRoute>
+              <DashBoard></DashBoard>
+            </PrivateRoute>}>
+              {/* <Route path={`/dashboard`} element={<DashBoard />} /> */}
+              <Route path={`/dashboard/AddReviews`} element={<AddReviews />} />
+              <Route path="/dashboard/ManageOrder" element={<ManageOrder />} />
+              <Route path="/dashboard/MyOrders" element={<MyOrders />} />
+
+            </Route>
+
 
 
           </Routes>

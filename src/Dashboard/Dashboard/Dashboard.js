@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link, Outlet, Route, Routes } from 'react-router-dom';
 import AddReviews from '../../Dashboard/AddReviews/AddReviews'
 import './DashBoard.css'
 
@@ -23,13 +23,15 @@ const DashBoard = () => {
                             <Link to='/home'>
                                 <button className="dashboard-menu mt-5 btn btn-warning px-5">Back</button>
                             </Link>
-                            <Link to='/dashboard'>
-                                <li className="dashboard-menu mt-5">dashboard</li>
-                            </Link>
-
-
-                            <Link to='/dashboard/addReviews'>
+                           
+                            <Link to={`/dashboard/addReviews`}>
                                 <li className="dashboard-menu mt-5">AddReview</li>
+                            </Link>
+                            <Link to={`/dashboard/ManageOrder`}>
+                                <li className="dashboard-menu mt-5">ManageOrder</li>
+                            </Link>
+                            <Link to={`/dashboard/MyOrders`}>
+                                <li className="dashboard-menu mt-5">MyOrders</li>
                             </Link>
 
                         </div>
@@ -59,23 +61,13 @@ const DashBoard = () => {
 
                         <button onClick={logOut} style={{ backgroundColor: "blue", color: 'white' }} className='btn px-4 m-3'>LogOut</button>
                     </div>
-                </div>
 
 
-                <div className="col-md-9 dashboard">
-                    <Routes>
 
-                        {/* <Route path='/' element={<PrivateRoute />}>
-                            <Route path='/services/:ID' element={<PlaceOrder />} />
-                        </Route> */}
+                    <div className="col-md-9 dashboard">
+                        <Outlet></Outlet>
 
-                        <Route path="/dashboard" element={<DashBoard />} />
-                        <Route path={`/dashboard/AddReviews`} element={<AddReviews />} />
-
-
-                    </Routes>
-
-                    {/* <AdminRoute path={`${path}/makeAdmin`}>
+                        {/* <AdminRoute path={`${path}/makeAdmin`}>
                                 <MakeAdmin></MakeAdmin>
                             </AdminRoute>
                             <AdminRoute path={`${path}/addProduct`}>
@@ -87,6 +79,7 @@ const DashBoard = () => {
                             <AdminRoute path={`${path}/managerProduct`}>
                                 <ManagerProduct></ManagerProduct>
                             </AdminRoute> */}
+                    </div>
                 </div>
             </div>
         </div>

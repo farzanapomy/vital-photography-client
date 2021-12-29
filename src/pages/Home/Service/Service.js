@@ -24,8 +24,9 @@ const Service = ({ service }) => {
                         </Card.Text>
                     </Card.Body>
 
-                    <Link to={`/services/${service._id}`}>
-                        <button className='service-btn border-0'>Order now</button>
+                    <Link to={`/services/${service._id}`} className='service-btn border-0'>
+                        {/* <input type="Order Now" /> */}
+                        <button >Order now</button>
                     </Link>
                 </Card>
             </CardGroup>

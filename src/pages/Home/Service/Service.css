@@ -7,9 +7,11 @@
 .single-service{
     color: black;
 }
-.service-btn{
+.service-btn button{
     background-image:linear-gradient(#a1adc59c,#FF9900);
-    padding: 10px 0px;
+    padding: 8px 30px;
+    border: 0px;
+    border-radius: 8px;
 
 }
 
