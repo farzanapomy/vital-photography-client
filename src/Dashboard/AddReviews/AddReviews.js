@@ -15,6 +15,7 @@ const AddReviews = () => {
                     return;
                 }
                 console.log(res);
+                reset()
             })
 
         console.log(data);
@@ -22,27 +23,38 @@ const AddReviews = () => {
 
     return (
         <>
-            <div className='w-50 mx-auto'>
+            <div className='mx-auto'>
                 <h2>Give your review here</h2>
 
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit(onSubmit)} className='input-field'>
                     <input
-                        {...register("name", { required: true })}
+                        {...register("name",
+                        { required: true })}
+                        required
+                        placeholder='Enter your name'
+                    />
+                    <input
+                        {...register("text",
+                        { required: true })}
+                        required
                         placeholder='Enter service name'
-                        className='p-2 w-100 input-field'
+                    />
+
+                    <textarea
+                        {...register("description",
+                        { required: true })}
+                        required
+                        placeholder='Write opinion about product'
+                        className='mx-auto'
+
                     />
 
                     <input
-                        {...register("name", { required: true })}
-                        placeholder='Enter service name'
-                        className='p-2 w-100 input-field'
-
-                    />
-
-                    <input
-                        {...register("image", { required: true })}
+                        {...register("image",
+                        { required: true })}
+                        required
                         placeholder='enter img link'
-                        className='p-2 w-100 input-field'
+
                     />
 
 
@@ -52,10 +64,10 @@ const AddReviews = () => {
                         {...register("ratting",)}
                         min="1"
                         max="5"
-                        className='p-2 w-100 input-field'
+
                     />
 
-                    <input className='btn btn-warning' type="submit" />
+                    <input className='submit' type="submit" />
                 </form>
             </div>
         </>
