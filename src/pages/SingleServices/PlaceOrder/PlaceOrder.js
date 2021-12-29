@@ -27,7 +27,7 @@ const PlaceOrder = () => {
                 }
                 console.log(res);
             })
-
+            reset()
 
         console.log(data);
     }

@@ -5,7 +5,7 @@ import useAuth from '../../../hooks/useAuth';
 import './Login.css'
 
 const Login = () => {
-    const { signInWithGoogle, logInUser } = useAuth()
+    const { signInWithGoogle, logInUser,error } = useAuth()
     const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
@@ -27,7 +27,7 @@ const Login = () => {
                     </Link>
                 </h6>
             </div>
-
+                <p>{error}</p>
             <button onClick={signInWithGoogle} className='login-btn'>signin with google</button>
         </div>
     );

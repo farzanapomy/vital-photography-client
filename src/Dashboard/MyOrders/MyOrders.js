@@ -8,10 +8,10 @@ const MyOrders = () => {
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
-        fetch(`https://whispering-crag-95185.herokuapp.com/MyOrders/${user?.email}`)
+        fetch(`https://whispering-crag-95185.herokuapp.com/allOrders/${user.email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
-    }, [])
+    }, [user.email])
 
 
     const handleDelete = (id) => {
