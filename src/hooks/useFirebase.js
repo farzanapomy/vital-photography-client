@@ -27,7 +27,7 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false))
     }
 
-    const registerUser = (email, password, name) => {
+    const registerUser = (email, password, name,navigate) => {
         setIsLoading(true)
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, email, password)
@@ -38,6 +38,7 @@ const useFirebase = () => {
                 setError(error.massage)
             })
             .finally(() => setIsLoading(false))
+            navigate('/dashboard')
     }
 
     const logInUser = (email, password) => {
