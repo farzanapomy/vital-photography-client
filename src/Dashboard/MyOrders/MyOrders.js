@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import useAuth from '../../hooks/useAuth';
-
+import { Link } from 'react-router-dom'
+import './MyOrders.css'
 const MyOrders = () => {
     const { user } = useAuth()
 
@@ -49,7 +50,11 @@ const MyOrders = () => {
                             key={order._id}>
                             <h6>Service Name: {order.text}</h6>
                             <p>Phone:{order.number}</p>
-                            <button onClick={() => handleDelete(order._id)} className='btn btn-warning '>Delete Order</button>
+                            {
+                                order.payment ? "Paid" :
+                                    <Link to={`/dashboard/MyOrders/${order._id}`}> <button>Pay</button></Link>
+                            }
+                            <button onClick={() => handleDelete(order._id)} className='delete-btn '>Delete Order</button>
                         </div>)
                 }
             </div>

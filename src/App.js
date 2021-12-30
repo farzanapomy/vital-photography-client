@@ -55,9 +55,11 @@ function App() {
               <Route path={`/dashboard/payment`} element={<Payment></Payment>}> </Route>
               <Route path={`/dashboard/MyOrders`} element={<MyOrders></MyOrders>}>
               </Route>
+              <Route path={`/dashboard/MyOrders/:paymentID`} element={<Payment></Payment>}>
+              </Route>
               <Route path={`/dashboard/AddReviews`} element={<AddReviews></AddReviews>}>
               </Route>
-             
+
 
               {/*   **********  admin routes   **********   */}
 
