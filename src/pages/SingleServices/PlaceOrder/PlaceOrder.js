@@ -3,11 +3,12 @@ import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
-import useFirebase from '../../../hooks/useFirebase';
+import useAuth from '../../../hooks/useAuth';
 import './PlaceOrder.css'
+
 const PlaceOrder = () => {
     const { ID } = useParams()
-    const { user } = useFirebase()
+    const { user } = useAuth()
 
     const [singleService, setSingleService] = useState([])
     const { register, handleSubmit, reset } = useForm();

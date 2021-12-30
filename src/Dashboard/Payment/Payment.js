@@ -13,7 +13,7 @@ const stripePromise = loadStripe('pk_test_51JwCt5Hck8KbGWQKzdsGm8EV0mQygETYpOCGo
 const Payment = () => {
     const { paymentID } = useParams()
     const [payment, setPayment] = useState({});
-    console.log(payment);
+    // console.log(payment);
 
     useEffect(() => {
         fetch(`https://whispering-crag-95185.herokuapp.com/payment/${paymentID}`)
@@ -23,15 +23,16 @@ const Payment = () => {
 
     return (
         <div>
+            
             <h2>User Name: {payment.name}</h2>
             <h5>Payment For: {payment.text} service</h5>
             <p>Total amount: ${payment.price}</p>
 
-            <Elements stripe={stripePromise}>
+          {payment?.price && <Elements stripe={stripePromise}>
                 <CheckoutForm
                     payment={payment}
                 />
-            </Elements>
+            </Elements>}
         </div>
     );
 };

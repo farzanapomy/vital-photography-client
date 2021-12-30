@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import './DashBoard.css'
 import useAuth from '../../hooks/useAuth';
+import './DashBoard.css'
 
 const DashBoard = () => {
     const { admin } = useAuth();

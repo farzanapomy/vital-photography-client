@@ -1,11 +1,36 @@
-import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React from 'react';
+import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
+import { useEffect } from 'react';
 import { useState } from 'react';
 import './CheckoutForm.css'
+import useAuth from '../../hooks/useAuth';
+import { Spinner } from 'react-bootstrap';
+
 const CheckoutForm = ({ payment }) => {
+    const { price, name } = payment
     const stripe = useStripe()
     const elements = useElements();
-    const [error,setError]=useState('')
+    const [error, setError] = useState('')
+    const [clientSecret, setClientSecret] = useState('')
+    const [success, setSuccess] = useState('')
+    const [processing, setProcessing] = useState(false)
+    const { user } = useAuth()
+
+    useEffect(() => {
+        fetch('http://localhost:5000/create-payment-intent', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify({ price })
+        })
+            .then(res => res.json())
+            .then(data => setClientSecret(data.clientSecret))
+
+    }, [price])
+
+
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -17,7 +42,7 @@ const CheckoutForm = ({ payment }) => {
         if (card === null) {
             return;
         }
-
+        setProcessing(true)
         const { error, paymentMethod } = await stripe.createPaymentMethod({
             type: 'card',
             card
@@ -25,18 +50,43 @@ const CheckoutForm = ({ payment }) => {
 
         if (error) {
             setError(error.message);
+            setSuccess('')
         }
         else {
             setError('')
             console.log(paymentMethod);
         }
 
+        // payment intent 
+        const { paymentIntent, error: intentError } = await stripe.confirmCardPayment(
+            clientSecret,
+            {
+                payment_method: {
+                    card: card,
+                    billing_details: {
+                        name: name,
+                        email: user.email
+                    },
+                },
+            },
+        );
+        if (intentError) {
+            setError(intentError.massage)
+        }
+        else {
+            setSuccess("Your payment Successfully")
+            setError('')
+            console.log(paymentIntent);
+            setProcessing(false)
+        }
+
     }
 
+    
 
     return (
         <div>
-            <form onSubmit={handleSubmit}  className='text-light'>
+            <form onSubmit={handleSubmit} className='text-light'>
                 <CardElement
                     options={{
                         style: {
@@ -53,12 +103,21 @@ const CheckoutForm = ({ payment }) => {
                         },
                     }}
                 />
-                <button type="submit" disabled={!stripe} className='pay-btn'>
-                    Pay ${payment.price}
-                </button>
+                {processing ?
+                    <Spinner animation="border" role="status">
+                       
+                    </Spinner>
+                    :
+                    <button type="submit" disabled={!stripe} className='pay-btn'>
+                        Pay ${price}
+                    </button>
+                    } 
             </form>
             {
                 error && <p className='bg-danger p-2 m-4'>{error}</p>
+            }
+            {
+                success && <p className='bg-success p-2 m-4'>{success}</p>
             }
         </div>
     );

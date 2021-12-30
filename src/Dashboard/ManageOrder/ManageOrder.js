@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Table } from 'react-bootstrap';
 
 const ManageOrder = () => {
-
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
