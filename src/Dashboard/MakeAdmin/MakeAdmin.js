@@ -25,8 +25,6 @@ const MakeAdmin = () => {
                 console.log(data)
             })
 
-
-        // console.log(data)
     }
     return (
         <div>
@@ -36,10 +34,10 @@ const MakeAdmin = () => {
                     <input
                         {...register("email", { required: true })}
                         placeholder='Enter Email'
-                        className='p-2 w-100 input-field'
+                        className='input-field '
                     />
-
-                    <input className='admin-btn' type="submit" value="Make Admin" />
+                    <br />
+                    <input className='admin-btn my-3' type="submit" value="Make Admin" />
                 </form>
 
             </div>

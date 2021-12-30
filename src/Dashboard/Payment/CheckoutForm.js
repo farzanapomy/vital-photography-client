@@ -7,7 +7,7 @@ import useAuth from '../../hooks/useAuth';
 import { Spinner } from 'react-bootstrap';
 
 const CheckoutForm = ({ payment }) => {
-    const { price, name } = payment
+    const { price, name, _id } = payment
     const stripe = useStripe()
     const elements = useElements();
     const [error, setError] = useState('')
@@ -17,7 +17,7 @@ const CheckoutForm = ({ payment }) => {
     const { user } = useAuth()
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://whispering-crag-95185.herokuapp.com/create-payment-intent', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -78,11 +78,29 @@ const CheckoutForm = ({ payment }) => {
             setError('')
             console.log(paymentIntent);
             setProcessing(false)
+
+            // save user 
+            const payment = {
+                amount: paymentIntent.amount,
+                transaction: paymentIntent.client_secret.slice('_secret')[0],
+                last4: paymentMethod.card.last4,
+                action: paymentIntent.status
+            }
+            const url = `https://whispering-crag-95185.herokuapp.com/allOrders/${_id}`
+            fetch(url, {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify(payment)
+            })
+                .then(res => res.json())
+                .then(data => console.log(data))
         }
 
     }
 
-    
+
 
     return (
         <div>
@@ -105,13 +123,13 @@ const CheckoutForm = ({ payment }) => {
                 />
                 {processing ?
                     <Spinner animation="border" role="status">
-                       
+
                     </Spinner>
                     :
                     <button type="submit" disabled={!stripe} className='pay-btn'>
                         Pay ${price}
                     </button>
-                    } 
+                }
             </form>
             {
                 error && <p className='bg-danger p-2 m-4'>{error}</p>
