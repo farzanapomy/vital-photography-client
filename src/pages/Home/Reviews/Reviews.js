@@ -26,7 +26,7 @@ const Reviews = () => {
 
         <div className='container my-5 review-container'>
             <h1>
-                Total Client testimonial: {reviews.length}
+                Happy Client testimonials: {reviews.length}
             </h1>
 
             <Swiper
