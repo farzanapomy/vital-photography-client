@@ -50,6 +50,7 @@ const MyOrders = () => {
                             key={order._id}>
                             <h6>Service Name: {order.text}</h6>
                             <p>Phone:{order.number}</p>
+                            <p>Charge {order.price}</p>
                             {
                                 order.payment ? "Paid" :
                                     <Link to={`/dashboard/MyOrders/${order._id}`}> <button>Pay</button></Link>

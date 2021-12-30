@@ -8,15 +8,16 @@ const Payment = () => {
     const [payment,setPayment]=useState({});
 
     useEffect(()=>{
-        fetch(`https://whispering-crag-95185.herokuapp.com/allOrders/${paymentID}`)
+        fetch(`https://whispering-crag-95185.herokuapp.com/payment/${paymentID}`)
         .then(res=>res.json())
-        .then(data=>console.log(data))
+        .then(data=>setPayment(data))
     },[paymentID])
 
     return (
         <div>
-            <h2>{paymentID}</h2>
-            <p>{payment.name}</p>
+            <h2>User Name: {payment.name}</h2>
+            <h5>Payment For: {payment.text} service</h5>
+            <p>Total amount: ${payment.price}</p>
         </div>
     );
 };

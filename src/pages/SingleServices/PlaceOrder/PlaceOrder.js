@@ -68,8 +68,14 @@ const PlaceOrder = () => {
                                     placeholder='Enter Your Address'
                                 />
                                 <input
+                                    {...register("price", { required: true })}
+                                    placeholder='Enter Phone Number'
+                                    defaultValue={singleService?.charge}
+                                />
+                                <input
                                     {...register("number", { required: true })}
                                     placeholder='Enter Phone Number'
+
                                 />
                                 <input className='submit' type="submit" value="Order Now" />
                             </form>
