@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Rating from 'react-rating';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faStar } from '@fortawesome/free-solid-svg-icons'
-import { EffectFade } from 'swiper';
+import { faStar } from '@fortawesome/free-solid-svg-icons'
 import 'swiper/css/effect-fade';
 
 import 'swiper/css';
@@ -15,9 +14,7 @@ const Reviews = () => {
 
     const element1 = <FontAwesomeIcon icon={faStar} style={{ color: "#FF9529" }} />
     const element2 = <FontAwesomeIcon icon={faStar} style={{ color: "#FFDF00" }} />
-    const ratingChanged = (newRating) => {
-        console.log(newRating);
-    };
+  
 
     useEffect(() => {
         fetch('https://whispering-crag-95185.herokuapp.com/AddReviews')

@@ -47,10 +47,8 @@ const MyOrders = () => {
                     orders.map(order =>
                         <div className='col-md-5 m-4 p-4 border card-item'
                             key={order._id}>
-                            <h6>Product Name{order.text}</h6>
+                            <h6>Service Name: {order.text}</h6>
                             <p>Phone:{order.number}</p>
-                            {/* <p>Ordered By:{order.email}</p> */}
-                            <p>Order state :{order.status}</p>
                             <button onClick={() => handleDelete(order._id)} className='btn btn-warning '>Delete Order</button>
                         </div>)
                 }

@@ -1,10 +1,10 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyCsn9OCYtBuqpHMaBk76Xj3wDguQ56EY_Q",
-  authDomain: "vital-photography.firebaseapp.com",
-  projectId: "vital-photography",
-  storageBucket: "vital-photography.appspot.com",
-  messagingSenderId: "442133354164",
-  appId: "1:442133354164:web:f4611d4f1b267db713a9e1",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
 export default firebaseConfig;
