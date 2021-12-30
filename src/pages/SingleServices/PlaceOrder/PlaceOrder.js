@@ -35,13 +35,13 @@ const PlaceOrder = () => {
 
     return (
         <div>
-            <h2>Order Here</h2>
+            <h2>Order Here your expected service</h2>
 
             <div>
                 <Container>
                     <Row>
                         <Col sm={6}>
-                            <img src={singleService?.img} alt="" />
+                            <img className='img-fluid' src={singleService?.img} alt="" />
                         </Col>
                         <Col sm={6}>
                             <form onSubmit={handleSubmit(onSubmit)} className='input-field'>

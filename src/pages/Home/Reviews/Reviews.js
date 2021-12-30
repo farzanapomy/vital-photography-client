@@ -14,7 +14,7 @@ const Reviews = () => {
 
     const element1 = <FontAwesomeIcon icon={faStar} style={{ color: "#FF9529" }} />
     const element2 = <FontAwesomeIcon icon={faStar} style={{ color: "#FFDF00" }} />
-  
+
 
     useEffect(() => {
         fetch('https://whispering-crag-95185.herokuapp.com/AddReviews')
@@ -24,20 +24,34 @@ const Reviews = () => {
 
     return (
 
-        <div className='container my-5'>
+        <div className='container my-5 review-container'>
+            <h1>
+                Total Client testimonial: {reviews.length}
+            </h1>
 
             <Swiper
                 spaceBetween={50}
                 slidesPerView={3}
                 onSlideChange={() => console.log('slide change')}
-
                 onSwiper={(swiper) => console.log(swiper)}
+               
             >
 
                 {
                     reviews.map(review =>
                         <SwiperSlide effect="fade"
                             key={review._id}
+                            className='swiper-container'
+                            breakpoints={{
+                                640: {
+                                    width: 640,
+                                    slidesPerView: 1,
+                                },
+                                768: {
+                                    width: 768,
+                                    slidesPerView: 2,
+                                },
+                            }}
                         >
                             <div className='review-item'>
                                 <img className='img-fluid' src={review.image} alt="" />

@@ -5,7 +5,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'
 import { Link } from 'react-router-dom';
 const Service = ({ service }) => {
-    const { name, img, description } = service;
+    const { name, img, description ,charge} = service;
 
     useEffect(() => {
         AOS.init()
@@ -21,6 +21,9 @@ const Service = ({ service }) => {
                         <Card.Title>{name}</Card.Title>
                         <Card.Text>
                             {description}
+                        </Card.Text>
+                        <Card.Text>
+                            Charge :${charge}
                         </Card.Text>
                     </Card.Body>
 
