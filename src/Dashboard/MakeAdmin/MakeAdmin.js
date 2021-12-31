@@ -39,7 +39,6 @@ const MakeAdmin = () => {
                     <br />
                     <input className='admin-btn my-3' type="submit" value="Make Admin" />
                 </form>
-
             </div>
         </div>
     );
