@@ -71,7 +71,7 @@ const CheckoutForm = ({ payment }) => {
             },
         );
         if (intentError) {
-            setError(intentError.massage)
+            setError(intentError.message)
         }
         else {
             setSuccess("Your payment Successfully")
@@ -86,9 +86,9 @@ const CheckoutForm = ({ payment }) => {
                 last4: paymentMethod.card.last4,
                 action: paymentIntent.status
             }
-            const url = `https://whispering-crag-95185.herokuapp.com/allOrders/${_id}`
+            const url = `https://whispering-crag-95185.herokuapp.com/payOrder/${_id}`
             fetch(url, {
-                method: "POST",
+                method: "PUT",
                 headers: {
                     "content-type": "application/json"
                 },
