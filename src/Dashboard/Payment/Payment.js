@@ -23,11 +23,9 @@ const Payment = () => {
 
     return (
         <div>
-
             <h2>User Name: {payment.name}</h2>
             <h5>Payment For: {payment.text} service</h5>
             <p>Total amount: ${payment.price}</p>
-
             {payment?.price && <Elements stripe={stripePromise}>
                 <CheckoutForm
                     payment={payment}
