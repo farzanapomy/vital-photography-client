@@ -16,7 +16,7 @@ const Payment = () => {
     // console.log(payment);
 
     useEffect(() => {
-        fetch(`https://whispering-crag-95185.herokuapp.com/payment/${paymentID}`)
+        fetch(`http://localhost:5000/payment/${paymentID}`)
             .then(res => res.json())
             .then(data => setPayment(data))
     }, [paymentID])

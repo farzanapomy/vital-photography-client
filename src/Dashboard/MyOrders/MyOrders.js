@@ -55,7 +55,7 @@ const MyOrders = () => {
                             <p>Phone:{order.number}</p>
                             <p>Charge {order.price}</p>
                             {
-                                order.payment? "Paid" :
+                                order.payment ? "Paid" :
                                     <Link to={`/dashboard/MyOrders/${order._id}`}> <button>Pay</button></Link>
                             }
                             <button onClick={() => handleDelete(order._id)} className='delete-btn '>Delete Order</button>
