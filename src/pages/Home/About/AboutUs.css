@@ -17,6 +17,30 @@
   letter-spacing: 15px;
 }
 
+.header-line {
+  display: inline-block;
+  position: relative;
+  color: #f9a826;
+}
+
+.header-line::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #f9a826;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.header-line:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 @media screen and (min-width: 768px) {
   .about-us-header p {
     width: 50%;
