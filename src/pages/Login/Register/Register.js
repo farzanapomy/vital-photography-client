@@ -8,7 +8,7 @@ const Register = () => {
     const { register, handleSubmit } = useForm();
     const { registerUser, error } = useAuth()
     const navigate = useNavigate()
-    
+
     const onSubmit = data => {
         registerUser(data.email, data.password, data.name, navigate)
 
@@ -44,7 +44,9 @@ const Register = () => {
                 />
                 <input type="submit" />
             </form>
-            
+            {
+                error && <p>{error}</p>
+            }
 
         </div>
     );
