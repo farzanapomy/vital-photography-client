@@ -1,0 +1,24 @@
+.header-line {
+  border: 0.5px solid #f9a826a1;
+  width: 20%;
+  margin: 0 auto;
+}
+.about-us-header p {
+  font-size: 16px;
+  text-align: center;
+  color: aliceblue;
+  margin: 0px auto;
+}
+.about-us-header h1 {
+  color: aliceblue;
+  text-align: center;
+  font-size: 40px;
+  margin: 25px auto;
+  letter-spacing: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .about-us-header p {
+    width: 50%;
+  }
+}
