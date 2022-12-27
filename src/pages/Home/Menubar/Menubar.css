@@ -1,11 +1,48 @@
-.main-title{
-    font-size: 30px;
-    font-weight: 700;
+.main-title {
+  font-size: 30px;
+  font-weight: 700;
 }
-.logout-btn button{
-    padding: 0px 20px;
-    border-radius: 10px;
-    font-weight: 700;
-    font-size: 15px;
-    background-image: linear-gradient(#202202ad,#d4c7c78e);
+
+.logout-btn button {
+  padding: 0px 20px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  background-image: linear-gradient(#202202ad, #d4c7c78e);
+}
+
+.nav-title:hover {
+  color: #f9eb26;
+  cursor: pointer;
+  border-bottom: 1px solid #f9a826;
+}
+
+.nav-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0px 10px;
+}
+
+.nav-title {
+  display: inline-block;
+  position: relative;
+  color: #f9a826;
+}
+
+.nav-title::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #f9a826;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-title:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
