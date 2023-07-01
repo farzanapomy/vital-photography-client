@@ -17,16 +17,13 @@ const CheckoutForm = ({ payment }) => {
   const { user } = useAuth();
 
   useEffect(() => {
-    fetch(
-      'https://vital-photography-server.up.railway.app/create-payment-intent',
-      {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify({ price }),
-      }
-    )
+    fetch('https://kind-blue-frog-gown.cyclic.app/create-payment-intent', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({ price }),
+    })
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
   }, [price]);
@@ -81,7 +78,7 @@ const CheckoutForm = ({ payment }) => {
         last4: paymentMethod.card.last4,
         action: paymentIntent.status,
       };
-      const url = `https://vital-photography-server.up.railway.app/payOrder/${_id}`;
+      const url = `https://kind-blue-frog-gown.cyclic.app/payOrder/${_id}`;
       fetch(url, {
         method: 'PUT',
         headers: {

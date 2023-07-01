@@ -16,9 +16,7 @@ const Payment = () => {
   console.log(payment);
 
   useEffect(() => {
-    fetch(
-      `https://vital-photography-server.up.railway.app/payment/${paymentID}`
-    )
+    fetch(`https://kind-blue-frog-gown.cyclic.app/payment/${paymentID}`)
       .then((res) => res.json())
       .then((data) => setPayment(data));
   }, [paymentID]);

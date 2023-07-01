@@ -78,7 +78,7 @@ const useFirebase = () => {
   // setAdmin
 
   useEffect(() => {
-    const url = `https://vital-photography-server.up.railway.app/users/${user.email}`;
+    const url = `https://kind-blue-frog-gown.cyclic.app/users/${user.email}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
@@ -111,7 +111,7 @@ const useFirebase = () => {
   // save user
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch('https://vital-photography-server.up.railway.app/users', {
+    fetch('https://kind-blue-frog-gown.cyclic.app/users', {
       method: method,
       headers: {
         'content-type': 'application/json',

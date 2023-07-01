@@ -5,7 +5,6 @@ import AnimatedText from 'react-animated-text-content';
 const AboutUs = () => {
   return (
     <div className="md-mx-auto ">
-      <div className="header-line"></div>
       <div className="about-us ">
         <div className="about-us-container">
           <div className="about-us-header">
@@ -30,7 +29,8 @@ const AboutUs = () => {
               >
                 WELCOME
               </AnimatedText>
-            </h1>
+            </h1>{' '}
+            <div className="header-line"></div>
             <p className="">
               You’re about to save yourself hours of time, frustrating moments
               of writer’s block, and improve your client relationships. Our

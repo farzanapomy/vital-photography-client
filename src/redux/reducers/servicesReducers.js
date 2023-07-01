@@ -5,11 +5,7 @@ import ActionsTypes from "../contents/ActionsTypes";
 
 // create state 
 const initialState = {
-    services: [{
-        id: 1,
-        name: 'pom',
-        user: 'cse'
-    }]
+    services: []
 }
 
 const servicesReducers = (state = initialState, { type, data }) => {

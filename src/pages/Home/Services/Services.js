@@ -8,7 +8,7 @@ import './Services.css';
 const Services = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch('https://vital-photography-server.up.railway.app/services')
+    fetch('https://kind-blue-frog-gown.cyclic.app/services')
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);

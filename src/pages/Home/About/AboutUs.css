@@ -1,3 +1,6 @@
+.about-us {
+  margin: 150px auto;
+}
 .header-line {
   border: 0.5px solid #f9a826a1;
   width: 20%;
@@ -8,6 +11,7 @@
   text-align: center;
   color: aliceblue;
   margin: 0px auto;
+  width: 50%;
 }
 .about-us-header h1 {
   color: aliceblue;
@@ -21,6 +25,8 @@
   display: inline-block;
   position: relative;
   color: #f9a826;
+  margin: 10px auto;
+  margin-bottom: 10px;
 }
 
 .header-line::after {
@@ -39,10 +45,4 @@
 .header-line:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
-}
-
-@media screen and (min-width: 768px) {
-  .about-us-header p {
-    width: 50%;
-  }
 }

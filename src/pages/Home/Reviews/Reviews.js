@@ -19,7 +19,7 @@ const Reviews = () => {
   );
 
   useEffect(() => {
-    fetch('https://vital-photography-server.up.railway.app/AddReviews')
+    fetch('https://kind-blue-frog-gown.cyclic.app/AddReviews')
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
