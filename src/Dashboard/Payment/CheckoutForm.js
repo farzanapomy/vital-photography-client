@@ -17,7 +17,7 @@ const CheckoutForm = ({ payment }) => {
   const { user } = useAuth();
 
   useEffect(() => {
-    fetch('https://kind-blue-frog-gown.cyclic.app/create-payment-intent', {
+    fetch('https://vital-server.onrender.com/create-payment-intent', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -78,7 +78,7 @@ const CheckoutForm = ({ payment }) => {
         last4: paymentMethod.card.last4,
         action: paymentIntent.status,
       };
-      const url = `https://kind-blue-frog-gown.cyclic.app/payOrder/${_id}`;
+      const url = `https://vital-server.onrender.com/payOrder/${_id}`;
       fetch(url, {
         method: 'PUT',
         headers: {

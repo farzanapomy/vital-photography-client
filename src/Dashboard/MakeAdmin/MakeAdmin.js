@@ -7,7 +7,7 @@ const MakeAdmin = () => {
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (email) => {
-    fetch('https://kind-blue-frog-gown.cyclic.app/users/makeAdmin', {
+    fetch('https://vital-server.onrender.com/users/makeAdmin', {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',

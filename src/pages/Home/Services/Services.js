@@ -8,7 +8,7 @@ import './Services.css';
 const Services = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch('https://kind-blue-frog-gown.cyclic.app/services')
+    fetch('https://vital-server.onrender.com/services')
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);

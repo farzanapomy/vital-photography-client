@@ -8,7 +8,7 @@ const AddServices = () => {
 
   const onSubmit = (data) => {
     axios
-      .post('https://kind-blue-frog-gown.cyclic.app/services', data)
+      .post('https://vital-server.onrender.com/services', data)
       .then((res) => {
         if (res.data.insertedId) {
           alert('Your Data Successfully added');

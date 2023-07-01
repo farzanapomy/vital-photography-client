@@ -10,7 +10,7 @@ const AddReviews = () => {
 
   const onSubmit = (data) => {
     axios
-      .post('https://kind-blue-frog-gown.cyclic.app/AddReviews', data)
+      .post('https://vital-server.onrender.com/AddReviews', data)
       .then((res) => {
         if (res.data.insertedId) {
           alert('Your review added on home page.');

@@ -14,7 +14,7 @@ const PlaceOrder = () => {
   const { register, handleSubmit, reset } = useForm();
 
   useEffect(() => {
-    const url = `https://kind-blue-frog-gown.cyclic.app/services/${ID}`;
+    const url = `https://vital-server.onrender.com/services/${ID}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setSingleService(data));
@@ -22,7 +22,7 @@ const PlaceOrder = () => {
 
   const onSubmit = (data) => {
     axios
-      .post('https://kind-blue-frog-gown.cyclic.app/allOrders', data)
+      .post('https://vital-server.onrender.com/allOrders', data)
       .then((res) => {
         if (res.data.insertedId) {
           alert('Your Orders successfully added');
@@ -33,7 +33,7 @@ const PlaceOrder = () => {
 
     console.log('data');
   };
-console.log(singleService);
+  console.log(singleService);
   return (
     <div sx="my-5">
       <h2>Order Here your expected service</h2>

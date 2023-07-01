@@ -16,7 +16,7 @@ const Payment = () => {
   console.log(payment);
 
   useEffect(() => {
-    fetch(`https://kind-blue-frog-gown.cyclic.app/payment/${paymentID}`)
+    fetch(`https://vital-server.onrender.com/payment/${paymentID}`)
       .then((res) => res.json())
       .then((data) => setPayment(data));
   }, [paymentID]);

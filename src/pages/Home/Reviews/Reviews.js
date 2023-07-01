@@ -19,7 +19,7 @@ const Reviews = () => {
   );
 
   useEffect(() => {
-    fetch('https://kind-blue-frog-gown.cyclic.app/AddReviews')
+    fetch('https://vital-server.onrender.com/AddReviews')
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);

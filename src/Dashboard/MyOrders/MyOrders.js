@@ -10,7 +10,7 @@ const MyOrders = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    fetch(`https://kind-blue-frog-gown.cyclic.app/allOrders/${user.email}`)
+    fetch(`https://vital-server.onrender.com/allOrders/${user.email}`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, [user.email]);
@@ -18,7 +18,7 @@ const MyOrders = () => {
   const handleDelete = (id) => {
     const note = window.confirm('Do you want to delete this Order?');
     if (note) {
-      const url = `https://kind-blue-frog-gown.cyclic.app/allOrders/${id}`;
+      const url = `https://vital-server.onrender.com/allOrders/${id}`;
       fetch(url, {
         method: 'DELETE',
       })
